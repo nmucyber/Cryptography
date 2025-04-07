@@ -56,15 +56,15 @@ def rabinMiller(num):
         t += 1
     for trials in range(5):
     # Try to falsify numbers primality 5 times.
-    a = random.randrange(2, num - 1)
-    v = pow(a, s, num)
-    if v != 1: # This test does not apply if v is 1.
-        i = 0
-        while v != (num - 1):
-            return False
-        else:
-            i = i + 1
-            v = (v ** 2) % num
+        a = random.randrange(2, num - 1)
+        v = pow(a, s, num)
+        if v != 1: # This test does not apply if v is 1.
+            i = 0
+            while v != (num - 1):
+                return False
+            else:
+                i = i + 1
+                v = (v ** 2) % num
     return True
     
 LOW_PRIMES = primeSieve(100)
