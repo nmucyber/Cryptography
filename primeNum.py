@@ -41,5 +41,6 @@ def primeSieve(sieveSize):
                 primes.append(i)
         return primes
 
-result = isPrimeTrialDiv(5000)
-print(result)
+numCheck = input("Please enter a number to check: ")
+result = isPrimeTrialDiv(numCheck)
+print("Prime Number Check: ", result)
