@@ -2,6 +2,15 @@
 
 import math, random
 
+class Style():
+  RED = "\033[31m"
+  GREEN = "\033[32m"
+  BLUE = "\033[34m"
+  YELLOW = "\033[33m"
+  MAGENTA = "\033[35m"
+  CYAN = "\033[36m"
+  RESET = "\033[0m"
+
 def isPrimeTrialDiv(num):
     # Returns True if num is a prime number, otherwise False.
     # Uses the trial division algorithm for testing primality.
@@ -89,22 +98,28 @@ def generateLargePrime(keysize=1024):
         if isPrime(num):
             return num
         
-# print("Which Prime Function would you like to run?")
-# print("===========================================")
-# print("1 - Trial Division")
-# print("1 - Eratosthenes Algorithm")
-# print("1 - Rabin-Miller")
-# print("===========================================")
-# primeSelection = input("Selection: ")
-# if primeSelection == 1:
-#     numCheck = input("Please enter a number to check: ")
-#     result = isPrimeTrialDiv(int(numCheck))
-#     print("Prime Number Check: ", result)
-# elif primeSelection == 2:
-#     numCheck = input("Please enter a number to check: ")
-#     results[] = primeSieve(int(numCheck))
-#     print("Prime Number Check: ", result)
+print("Which Prime Function would you like to run?")
+print("===========================================")
+print(f"{Style.RED}1 - Trial Division{Style.RESET}")
+print(f"{Style.GREEN}2 - Eratosthenes Algorithm{Style.RESET}")
+print(f"{Style.BLUE}3 - Rabin-Miller{Style.RESET}")
+print(f"{Style.YELLOW}4 - Generate a large prime{Style.RESET}")
+print(f"==========================================")
 
-# numCheck = input("Please enter a number to check: ")
-# result = isPrimeTrialDiv(int(numCheck))
-# print("Prime Number Check: ", result)
+primeSelection = input(f"{Style.RED}Selection:{Style.RESET}")
+if primeSelection == 1:
+    numCheck = input(f"{Style.RED}Please enter a number to check:{Style.RESET}")
+    result = isPrimeTrialDiv(int(numCheck))
+    print("Prime Number Check: ", result)
+
+elif primeSelection == 2:
+    numCheck = input(f"{Style.RED}Please enter a number to check: {Style.RESET}")
+    result = primeSieve(int(numCheck))
+    print("Prime Number Check: ", result)
+
+elif primeSelection == 3:
+numCheck = input("Please enter a number to check: ")
+result = isPrime(int(numCheck))
+print("Prime Number Check: ", result)
+
+print(f"{Style.RED}ONE{Style.RESET}")
