@@ -123,3 +123,5 @@ result = isPrime(int(numCheck))
 print("Prime Number Check: ", result)
 
 print(f"{Style.RED}ONE{Style.RESET}")
+
+#TEST Git
