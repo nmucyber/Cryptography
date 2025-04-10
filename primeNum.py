@@ -104,24 +104,33 @@ print(f"{Style.RED}1 - Trial Division{Style.RESET}")
 print(f"{Style.GREEN}2 - Eratosthenes Algorithm{Style.RESET}")
 print(f"{Style.BLUE}3 - Rabin-Miller{Style.RESET}")
 print(f"{Style.YELLOW}4 - Generate a large prime{Style.RESET}")
-print(f"==========================================")
+print(f"==========================================\n")
 
-primeSelection = input(f"{Style.RED}Selection:{Style.RESET}")
+#Check if number is prime using simple trial division
+primeSelection = int(input("Selection: "))
 if primeSelection == 1:
-    numCheck = input(f"{Style.RED}Please enter a number to check:{Style.RESET}")
-    result = isPrimeTrialDiv(int(numCheck))
-    print("Prime Number Check: ", result)
-
-elif primeSelection == 2:
     numCheck = input(f"{Style.RED}Please enter a number to check: {Style.RESET}")
+    result = isPrimeTrialDiv(int(numCheck))
+    print(f"{Style.RED}Prime Number Check: {Style.RESET}", result)
+
+#Check if number is prime using the Eratosthenes Algorithm
+elif primeSelection == 2:
+    numCheck = input(f"{Style.GREEN}Enter a Maximum number to check primes for: {Style.RESET}")
     result = primeSieve(int(numCheck))
     print("Prime Number Check: ", result)
 
+#Check if number is prime using Rabin-Miller
 elif primeSelection == 3:
-numCheck = input("Please enter a number to check: ")
-result = isPrime(int(numCheck))
-print("Prime Number Check: ", result)
+    numCheck = input(f"{Style.BLUE}Please enter a number to check: {Style.RESET}")
+    result = isPrime(int(numCheck))
+    print("Prime Number Check: ", result)
 
-print(f"{Style.RED}ONE{Style.RESET}")
+#Generate a large prime number
+elif primeSelection == 4:
+    numCheck = input(f"{Style.YELLOW}Please enter a number to check: {Style.RESET}")
+    result = generateLargePrime(int(numCheck))
+    print("Prime Number Check: ", result)
+else:
+    print("Invalid selection. Please select a number between 1 and 4.")
+    exit()
 
-#TEST Git
